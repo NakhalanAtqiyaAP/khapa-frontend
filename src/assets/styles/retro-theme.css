@@ -1,0 +1,45 @@
+body {
+    font-family: 'Press Start 2P', cursive; /* Contoh font pixel */
+    background-color: #f0e6d2; /* Warna latar krem */
+    color: #333;
+  }
+  
+  .retro-button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #d9bda5; /* Warna tombol coklat muda */
+    border: 2px solid #5c3d2e; /* Border coklat tua */
+    color: #5c3d2e;
+    box-shadow: 3px 3px 0px #5c3d2e;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .retro-button:hover {
+    background-color: #c8a991;
+    box-shadow: 1px 1px 0px #5c3d2e;
+    transform: translate(2px, 2px);
+  }
+  
+  .retro-card {
+    background-color: #fff9f0;
+    border: 3px solid #5c3d2e;
+    border-radius: 0; /* Sudut tajam */
+  }
+  
+  .retro-input {
+    font-family: 'Arial', sans-serif; /* Font sistem yang lebih mudah dibaca untuk input */
+    border: 2px solid #5c3d2e;
+    border-radius: 0;
+    background-color: #fff;
+  }
+  
+  .retro-navbar {
+    background-color: #5c3d2e; /* Coklat tua */
+    border-bottom: 4px solid #d9bda5;
+  }
+  
+  .retro-navbar .navbar-brand,
+  .retro-navbar .nav-link {
+    color: #f0e6d2 !important; /* Krem */
+    font-family: 'Press Start 2P', cursive;
+  }
+  /* Tambahkan style lain sesuai kebutuhan */
