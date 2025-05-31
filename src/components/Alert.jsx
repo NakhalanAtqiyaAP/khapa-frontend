@@ -15,7 +15,6 @@ const GalleryItem = ({ item, onDelete, deletable }) => {
       cancelButtonText: 'Batalkan',
     }).then((result) => {
       if (result.isConfirmed) {
-        // Call delete callback from parent
         onDelete(item.id)
           .then(() => {
             Swal.fire('Deleted!', 'Gambar Berhasil Dihapus.', 'success');

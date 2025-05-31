@@ -33,14 +33,12 @@ const GalleryPage = () => {
     try {
       setLoading(true);
       const response = await authApi.getGalleries();
-      // Safely handle the response data
       const items = Array.isArray(response?.data?.data) 
         ? response.data.data.map(item => ({
             id: item.id || '',
             text: item.text || '',
             img: item.img || '',
             user_id: item.user_id || '',
-            // Add any other required fields with fallbacks
           }))
         : [];
       setGalleryItems(items);

@@ -9,7 +9,7 @@ const HomePage = () => {
   const [goals, setGoals] = useState([]);
   const [newGoal, setNewGoal] = useState({
     text: '',
-    date: new Date().toISOString().split('T')[0] // Default to today's date
+    date: new Date().toISOString().split('T')[0] 
   });
   const [loading, setLoading] = useState(true);
   const { user } = useAuth();

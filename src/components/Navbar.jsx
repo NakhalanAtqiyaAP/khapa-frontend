@@ -11,7 +11,6 @@ const Navbar = () => {
     navigate('/login');
   };
 
-  // Jika masih loading, tampilkan navbar kosong
   if (loading) {
     return null;
   }

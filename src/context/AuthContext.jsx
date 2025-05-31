@@ -8,7 +8,6 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Fungsi untuk memeriksa dan memuat data user dari localStorage
   const loadUserFromStorage = () => {
     const storedToken = localStorage.getItem('token');
     const storedUser = localStorage.getItem('user');
@@ -24,14 +23,12 @@ export const AuthProvider = ({ children }) => {
         clearAuthData();
       }
     } else {
-      clearAuthData(); // jika user = null atau 'undefined'
+      clearAuthData(); 
     }
   
     setLoading(false);
   };
   
-
-  // Fungsi untuk membersihkan data auth
   const clearAuthData = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
@@ -47,11 +44,10 @@ export const AuthProvider = ({ children }) => {
       const response = await login(credentials);
       
       if (response && response.token) {
-        // Simpan token dan user ke localStorage (sudah disimpan di api.js, tapi boleh juga disimpan ulang)
         // localStorage.setItem('token', response.token);
         // localStorage.setItem('user', JSON.stringify(response.user));
   
-        setUser(response.user); // Update state
+        setUser(response.user); 
         
         Swal.fire({
           icon: 'success',
@@ -65,7 +61,6 @@ export const AuthProvider = ({ children }) => {
   
       return false;
     } catch (error) {
-      // Swal akan ditampilkan dari interceptor axios, tidak perlu lagi di sini
       return false;
     }
   };
@@ -93,7 +88,6 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Custom hook untuk menggunakan auth context
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {

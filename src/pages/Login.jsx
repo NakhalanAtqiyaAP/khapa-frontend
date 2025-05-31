@@ -25,7 +25,7 @@ const LoginPage = () => {
     try {
       const success = await handleLogin(credentials);
       if (success) {
-        navigate('/home'); // Redirect to home after successful login
+        navigate('/home'); 
       }
     } finally {
       setIsLoading(false);

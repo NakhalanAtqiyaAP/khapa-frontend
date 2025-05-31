@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const ArticlesPage = () => {
-  const [articles, setArticles] = useState(null); // Initialize as null
+  const [articles, setArticles] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [newArticle, setNewArticle] = useState({
@@ -23,12 +23,12 @@ const ArticlesPage = () => {
       setLoading(true);
       setError(null);
       const response = await authApi.getArticles();
-      setArticles(response.data?.data || []); // Ensure we always get an array
+      setArticles(response.data?.data || []);
       setLoading(false);
     } catch (error) {
       setError('Failed to load articles');
       setLoading(false);
-      setArticles([]); // Set to empty array on error
+      setArticles([]); 
     }
   };
 
@@ -46,7 +46,7 @@ const ArticlesPage = () => {
 
     try {
       const response = await authApi.createArticle(newArticle);
-      setArticles(prev => [response.data, ...(prev || [])]); // Safe null handling
+      setArticles(prev => [response.data, ...(prev || [])]);
       setNewArticle({ judul: '', text: '' });
     } catch (error) {
       setError('Failed to create article');

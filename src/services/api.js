@@ -1,4 +1,3 @@
-// src/services/api.js
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
@@ -6,7 +5,6 @@ const api = axios.create({
   baseURL: 'http://localhost:8080',
 });
 
-// Request interceptor to add auth token
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
@@ -20,7 +18,6 @@ api.interceptors.request.use(
   }
 );
 
-// Response interceptor to handle errors
 api.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -47,8 +44,6 @@ api.interceptors.response.use(
 export const login = async (credentials) => {
   try {
     const response = await api.post('/api/login', credentials);
-    
-    // Store token and user data in localStorage
     localStorage.setItem('token', response.data.token);
     localStorage.setItem('user', JSON.stringify(response.data.user));
     
